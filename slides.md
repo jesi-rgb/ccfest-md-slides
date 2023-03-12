@@ -42,20 +42,29 @@
 
 # So, GIFs
 
-## How?
+![bg left:33%](media/texture.jpg)
+
+## What?
+
+We will develop a system that fits into the p5.js ecosystem, allowing users to very easily save gifs out of their sketches.
 
 - **Bucket list**:
   - Fast, as fast as possible
   - Very easy to use
+  - Feels native to the platform
   - Somewhat reliable
-  - Responsive.
+  - Responsive
     - _Please, do not freeze my computer_
 
 ---
 
 # So, GIFs
 
+![bg right:33%](media/texture.jpg)
+
 ## How?
+
+A bird's eye view:
 
 - Gather every **frame** from your animation
 
@@ -81,11 +90,63 @@
 
 In order to build any given GIF file, we must comply with the GIF specs. And specs tell us that we must use a maximum of 256 colors.
 
-We can use a default one that has a mediocre representation of _all_ the colors, or we can generate one ourselves. It is not _that_ hard and yields much better results.
+---
+
+# Global Palette Generation
+
+![bg right](media/texture.jpg)
+
+<!-- top: general purpose palette from insouris, bottom: a similar looking "custom" palette matching our theme -->
+
+We can use a default one that has a mediocre representation of _all_ colors, or we can generate one ourselves.
+
+It is not _that_ hard and yields much better results.
 
 ---
 
 # Global Palette Generation
+
+![bg left:33%](media/texture.jpg)
+
+<!-- top: a grid of "16M" squares representing all the colors, down: a very small palette of 8x8 colors representing our final space -->
+
+## How?
+
+### ✨**Color Quantization**✨
+
+We want to shrink the usual 8-bit colorspace of 16M+ colors into just(!) 256. Thats a 0,0016% of the total.
+
+---
+
+# Global Palette Generation
+
+![bg right:33%](media/texture.jpg)
+
+## ✨**Color Quantization**✨
+
+Basic steps:
+
+- Subdivide the original color space into chunks.
+- Get the desired pixel color values and find the chunk it belongs in.
+- Substitute that color for the chunk's representing color.
+
+For excruciating details, you may check out [my blogpost](https://www.jesirgb.com/blog/gif-encoding), in which I covered this in great detail.
+
+---
+
+# Global Palette Generation
+
+![bg left](media/texture.jpg)
+
+<!-- similar composition as before. top is a ton of chunks being selected and arrows coming from them, that go to bottom, in which they are ordered  -->
+
+Now that we _know_ how color quantization works, we can actually generate our palette.
+
+The main idea is to shrink the color space in order to find what regions (or chunks) are more popular amongst the pixels in our image.
+
+For that, we make a ranking of the most frequent chunks and simply take the 256 best.
+
+---
 
 ---
 
