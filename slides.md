@@ -144,16 +144,38 @@ Now that we _know_ how color quantization works, we can actually generate our pa
 
 The main idea is to shrink the color space in order to find what regions (or chunks) are more popular amongst the pixels in our image.
 
-For that, we make a ranking of the most frequent chunks and simply take the 256 best.
-
----
+For that, we make a ranking of the most frequent chunks as they appear in our images and simply take the 256 best.
 
 ---
 
 # Applying a palette
 
+![bg left](media/texture.jpg)
+
+<!-- copy image from blogpost  -->
+
+The most difficult part was generating a palette. Now, it all comes down to applying it.
+
+To _apply a palette_ means to take the original pixels in each frame and substitute them for their closest version within the palette.
+
 ---
 
 # Important optionals
 
+![bg right:33%](media/texture.jpg)
+
+<!-- copy image from blogpost  -->
+
 ## ✨Transparency optimization✨
+
+At this point we could be done. But this is a technique that could greatly help in file size.
+
+- We analyze each frame before encoding it and find what's similar.
+- We mark everything that is redundant from one frame to the next. That is, pixels have the same values.
+- By marking them, we can tell the gif encoder to simply treat these as transparent, allowing us to _see through_ this frame in to the previous one.
+
+---
+
+# Summing up
+
+![bg right:33%](media/texture.jpg)
