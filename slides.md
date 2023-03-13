@@ -82,7 +82,7 @@ A bird's eye view:
 
 # Global Palette Generation
 
-![bg left opacity:.4](media/tourney.gif)
+![bg left ](media/gif_book.png)
 
 <!-- GIF or image of an ancient book "the gif specs" -->
 
