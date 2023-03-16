@@ -1,6 +1,13 @@
 ---
 paginate: true
-transition: fade .1s
+transition: dissolve
+
+<!-- - show failing stuff or edge cases -->
+<!-- - talk about the actual problem -->
+<!--   - the function was not there and was necessary for people -->
+<!-- - show a demo (beginning? end?) -->
+<!--   - show how I was done before -->
+<!--   - show CCapture -->
 ---
 
 # Implementing native GIF saving in p5.js
@@ -23,6 +30,8 @@ transition: fade .1s
 
 # So, GIFs
 
+![bg right](media/earth.gif)
+
 ## What?
 
 - _Very_ old format
@@ -34,6 +43,8 @@ transition: fade .1s
 ---
 
 # So, GIFs
+
+![bg left:50%](media/big_brain.gif)
 
 ## Why?
 
@@ -47,7 +58,7 @@ transition: fade .1s
 
 # So, GIFs
 
-![bg left:33%](media/texture.jpg)
+![bg left:33%](media/frame_5.png)
 
 ## How?
 
@@ -67,7 +78,7 @@ We will develop a system that fits into the p5.js ecosystem, allowing users to v
 
 # So, GIFs
 
-![bg right:33%](media/texture.jpg)
+![bg right](media/frame_6.png)
 
 ## How?
 
@@ -89,7 +100,7 @@ A bird's eye view:
 
 # Frame Gathering
 
-![bg left:33%](media/texture.jpg)
+![bg right:50%](media/frame_7.png)
 
 - Save a frame every _n_ milliseconds?
   - Some sketches will run slower, if running very intensive animations
