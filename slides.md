@@ -1,3 +1,19 @@
+---
+paginate: true
+transition: dissolve
+
+style: |
+  @keyframes marp-transition-dissolve {
+    from {
+    --marp-transition-duration:0.2s;
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+---
+
 # Implementing native GIF saving in p5.js
 
 #### Jesús Enrique Cartas Rascón — March 25th, 2023
@@ -6,13 +22,13 @@
 
 # Who are you again?
 
+![bg left](media/duggish.jpg)
+
 - It's Jesús here! Digitally known as @jesi_rgb mostly everywhere.
 
 - I am a designer, web developer, animator and musician! All things art, but make it digital.
 
 - So far, I've mainly done mathematical animation and web design.
-
-![bg left](media/duggish.jpg)
 
 ---
 
@@ -20,11 +36,11 @@
 
 ## What?
 
-- Pronounced like /GIF/
-- Lossless image compression format
-- Lighter, video like (sometimes)
 - _Very_ old format
 - Palette based
+- Lossless image compression format
+- Lighter, video like (sometimes)
+- Pronounced like /GIF/
 
 ---
 
@@ -44,7 +60,7 @@
 
 ![bg left:33%](media/texture.jpg)
 
-## What?
+## How?
 
 We will develop a system that fits into the p5.js ecosystem, allowing users to very easily save gifs out of their sketches.
 
@@ -55,6 +71,8 @@ We will develop a system that fits into the p5.js ecosystem, allowing users to v
   - Somewhat reliable
   - Responsive
     - _Please, do not freeze my computer_
+  - Small file size
+    - Twitter's file limit is 15MB
 
 ---
 
@@ -80,9 +98,21 @@ A bird's eye view:
 
 ---
 
+# Frame Gathering
+
+![bg left:33%](media/texture.jpg)
+
+- Save a frame every _n_ milliseconds?
+  - Some sketches will run slower, if running very intensive animations
+  - The `frameRate` won't be consistent throughout the animation
+
+### We need to _wait_ for the frame to finish and immediately save it
+
+---
+
 # Global Palette Generation
 
-![bg left ](media/gif_book.png)
+![bg left](media/gif_book.png)
 
 <!-- GIF or image of an ancient book "the gif specs" -->
 

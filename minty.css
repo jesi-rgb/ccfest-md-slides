@@ -4,6 +4,7 @@ section {
   font-size: 40px;
   padding-left: 100px;
   padding-top: 60px;
+  padding-bottom: 40px;
   padding-right: 60px;
   background-color: #aff7d0;
 
@@ -27,6 +28,13 @@ section {
     ),
     radial-gradient(#aff7d0 0%, #79eaac 90%);
   background-size: var(--size) var(--size), var(--size) var(--size), 100% 100%;
+}
+
+section::after {
+  font-weight: bold;
+  color: #021713;
+  text-shadow: 2px 2px 0 #fff;
+  font-family: "IBM Plex Mono";
 }
 
 h1 {
@@ -62,6 +70,11 @@ li {
 }
 
 a {
+  color: #0e685f;
+}
+
+code {
+  font-family: "IBM Plex Mono Medium";
   color: #0e685f;
 }
 
