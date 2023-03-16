@@ -1,17 +1,6 @@
 ---
 paginate: true
-transition: dissolve
-
-style: |
-  @keyframes marp-transition-dissolve {
-    from {
-    --marp-transition-duration:0.2s;
-      opacity: 1;
-    }
-    to {
-      opacity: 0;
-    }
-  }
+transition: fade .1s
 ---
 
 # Implementing native GIF saving in p5.js
