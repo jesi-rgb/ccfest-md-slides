@@ -1,6 +1,7 @@
 ---
-paginate: true
 transition: dissolve
+paginate: true
+---
 
 <!-- - show failing stuff or edge cases -->
 <!-- - talk about the actual problem -->
@@ -8,9 +9,8 @@ transition: dissolve
 <!-- - show a demo (beginning? end?) -->
 <!--   - show how I was done before -->
 <!--   - show CCapture -->
----
 
-# Implementing native GIF saving in p5.js
+# GIF encoding in p5.js 🌸
 
 #### Jesús Enrique Cartas Rascón — March 25th, 2023
 
@@ -25,6 +25,12 @@ transition: dissolve
 - I am a designer, web developer, animator and musician! All things art, but make it digital.
 
 - So far, I've mainly done mathematical animation and web design.
+
+---
+
+# The solution
+
+<!-- here goes maybe link to demo? -->
 
 ---
 
@@ -112,13 +118,17 @@ A bird's eye view:
 
 # Global Palette Generation
 
-![bg left](media/gif_book.png)
+![bg left](media/frame_9.png)
 
 <!-- GIF or image of an ancient book "the gif specs" -->
 
 ## Why?
 
-In order to build any given GIF file, we must comply with the GIF specs. And specs tell us that we must use a maximum of 256 colors.
+In order to build any given GIF file, we must comply with the GIF specs. And the specs tell us to build a palette that everyframe needs to reference, whether they're local or global.
+
+We can make _local_ palettes, but that's wasteful.
+
+We'll make a **global** palette instead.
 
 ---
 
@@ -136,45 +146,14 @@ It is not _that_ hard and yields much better results.
 
 # Global Palette Generation
 
-![bg left:33%](media/texture.jpg)
-
-<!-- top: a grid of "16M" squares representing all the colors, down: a very small palette of 8x8 colors representing our final space -->
-
-## How?
-
-### ✨**Color Quantization**✨
-
-We want to shrink the usual 8-bit colorspace of 16M+ colors into just(!) 256. Thats a 0,0016% of the total.
-
----
-
-# Global Palette Generation
-
 ![bg right:33%](media/texture.jpg)
 
-## ✨**Color Quantization**✨
-
-Basic steps:
-
-- Subdivide the original color space into chunks.
-- Get the desired pixel color values and find the chunk it belongs in.
-- Substitute that color for the chunk's representing color.
+- Make a list of all the **unique colors** present in every frame; that is, every color that will appear in our animation
+- **Sort them by frequency**; that is, how much they appear in our animation
+  - Background colors, for example, appear a lot (basically always!)
+- Finally, take the **255' most important colors!**
 
 For excruciating details, you may check out [my blogpost](https://www.jesirgb.com/blog/gif-encoding), in which I covered this in great detail.
-
----
-
-# Global Palette Generation
-
-![bg left](media/texture.jpg)
-
-<!-- similar composition as before. top is a ton of chunks being selected and arrows coming from them, that go to bottom, in which they are ordered  -->
-
-Now that we _know_ how color quantization works, we can actually generate our palette.
-
-The main idea is to shrink the color space in order to find what regions (or chunks) are more popular amongst the pixels in our image.
-
-For that, we make a ranking of the most frequent chunks as they appear in our images and simply take the 256 best.
 
 ---
 
