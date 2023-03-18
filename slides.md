@@ -134,11 +134,11 @@ We'll make a **global** palette instead.
 
 # Global Palette Generation
 
-![bg right](media/texture.jpg)
+![bg right](media/frame_10.png)
 
 <!-- top: general purpose palette from insouris, bottom: a similar looking "custom" palette matching our theme -->
 
-We can use a default one that has a mediocre representation of _all_ colors, or we can generate one ourselves.
+We can use the default one that has a mediocre representation of _all_ colors, or we can generate one ourselves.
 
 It is not _that_ hard and yields much better results.
 
@@ -146,7 +146,7 @@ It is not _that_ hard and yields much better results.
 
 # Global Palette Generation
 
-![bg right:33%](media/texture.jpg)
+![bg right](media/frame_11.png)
 
 - Make a list of all the **unique colors** present in every frame; that is, every color that will appear in our animation
 - **Sort them by frequency**; that is, how much they appear in our animation
@@ -159,13 +159,15 @@ For excruciating details, you may check out [my blogpost](https://www.jesirgb.co
 
 # Applying a palette
 
-![bg left](media/texture.jpg)
+![bg right](media/frame_12.png)
 
 <!-- copy image from blogpost  -->
 
 The most difficult part was generating a palette. Now, it all comes down to applying it.
 
-To _apply a palette_ means to take the original pixels in each frame and substitute them for their closest version within the palette.
+To _apply a palette_ means to take the original pixels in each frame and substitute them for their **closest version** within the palette.
+
+To find how _close_ two colors are, we can use the **euclidean distance**, for example.
 
 ---
 
