@@ -1,18 +1,8 @@
 ---
-transition: dissolve
-paginate: true
+transition: fade .1s
 ---
 
-<!-- - show failing stuff or edge cases -->
-<!-- - talk about the actual problem -->
-<!--   - the function was not there and was necessary for people -->
-<!-- - show a demo (beginning? end?) -->
-<!--   - show how I was done before -->
-<!--   - show CCapture -->
-
-# GIF encoding in p5.js 🌸
-
-#### Jesús Enrique Cartas Rascón — March 25th, 2023
+![bg](media/thumbnail.png)
 
 ---
 
@@ -171,18 +161,16 @@ To find how _close_ two colors are, we can use the **euclidean distance**, for e
 
 ---
 
-# Important optionals
+# Transparency Optimization
 
-![bg right:33%](media/texture.jpg)
+![bg right](media/frame_13.png)
 
 <!-- copy image from blogpost  -->
 
-## ✨Transparency optimization✨
-
 At this point we could be done. But this is a technique that could greatly help in file size.
 
-- We analyze each frame before encoding it and find what's similar.
-- We mark everything that is redundant from one frame to the next. That is, pixels have the same values.
+- We analyze each **pair of frames** before encoding and find what's similar.
+- We mark everything that is redundant from one frame to the next. That is, pixels that have the same values.
 - By marking them, we can tell the gif encoder to simply treat these as transparent, allowing us to _see through_ this frame in to the previous one.
 
 ---
