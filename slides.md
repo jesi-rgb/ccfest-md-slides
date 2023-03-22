@@ -20,8 +20,19 @@ transition: fade .1s
 
 # The solution
 
-<a href="https://openprocessing.org/sketch/1872458">
-<iframe src="https://openprocessing.org/sketch/1872458/embed/" width="1680" height="800"></iframe>
+![bg](media/solution.png)
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<a href="https://openprocessing.org/sketch/1872458" style="opacity:0;">
+<h1>
+aaaaaaaaaaaaaaa
+</h1>
+
 </a>
 
 ---
@@ -179,4 +190,32 @@ At this point we could be done. But this is a technique that could greatly help 
 
 # Summing up
 
-![bg right:33%](media/texture.jpg)
+### Goals
+
+<!-- mention that this feature is allowing newcomers to much more easily share stuff, and that this was one of the main purposes of the project altogether. how can this improve accessibility?  -->
+
+- Given any sketch, we can successfully render GIFs easily, quickly and conveniently.
+- No need to hook up external libraries. These can feel intimidating for newcomers.
+  - _Sometimes those even feel intimidating to me_
+- File size is relatively small and render times are not too long!
+  - Also, some progress is shown for proper user feedback
+
+![bg right](media/frame_14.png)
+
+---
+
+# Thanks much!
+
+![bg left](media/the_end.png)
+
+- Special thanks to **Divyanshu Raj**, **Dave Pagurek** and **Matt DesLauriers** for their continued support and invaluable feedback and help!
+- And massive props to the Processing Foundation for making this possible and accessible to everyone.
+
+<br>
+
+### and, last but not least... thank YOU!
+
+<br>
+<br>
+
+### Any questions?
