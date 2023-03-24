@@ -16,7 +16,7 @@ section {
   padding-right: 60px;
   background-color: #aff7d0;
 
-  font-family: "Supreme";
+  font-family: "Supreme", sans-serif, system-ui;
   color: #021713;
 
   --size: 200px;
@@ -46,7 +46,7 @@ section::after {
 }
 
 h1 {
-  font-family: "Zodiak";
+  font-family: "Zodiak", serif, system-ui;
   font-weight: 800;
   letter-spacing: -3px;
 }
