@@ -2,7 +2,7 @@
 @import url("https://api.fontshare.com/v2/css?f[]=supreme@1&display=swap");
 
 @font-face {
-  font-family: Zodiak;
+  font-family: "Zodiak";
   src: url("https://api.fontshare.com/v2/css?f[]=zodiak@1&display=swap");
 }
 
