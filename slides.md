@@ -71,7 +71,7 @@ aaaaaaaaaaaaaaa
 
 ## How?
 
-We will develop a system that fits into the p5.js ecosystem, allowing users to very easily save gifs out of their sketches.
+We will develop a tool that fits into the p5.js ecosystem, allowing users to very easily save gifs out of their sketches.
 
 - **Bucket list**:
   - Fast, as fast as possible
@@ -85,13 +85,9 @@ We will develop a system that fits into the p5.js ecosystem, allowing users to v
 
 ---
 
-# So, GIFs
+# A 🐦's 👀 view
 
 ![bg right](media/frame_6.png)
-
-## How?
-
-A bird's eye view:
 
 - Gather every **frame** from your animation
 
@@ -123,11 +119,9 @@ A bird's eye view:
 
 ![bg left](media/frame_9.png)
 
-<!-- GIF or image of an ancient book "the gif specs" -->
+In order to build any given GIF file, we must **comply** with the GIF specs. And the specs tell us to build a palette that every frame needs to reference, whether it is local or global.
 
-## Why?
-
-In order to build any given GIF file, we must comply with the GIF specs. And the specs tell us to build a palette that everyframe needs to reference, whether they're local or global.
+This palette must contain 256 _(!)_ colors.
 
 We can make _local_ palettes, but that's wasteful.
 
@@ -141,7 +135,7 @@ We'll make a **global** palette instead.
 
 <!-- top: general purpose palette from insouris, bottom: a similar looking "custom" palette matching our theme -->
 
-We can use the default one that has a mediocre representation of _all_ colors, or we can generate one ourselves.
+We can use the default one that has a **mediocre** representation of _all_ colors, or we can generate one ourselves.
 
 It is not _that_ hard and yields much better results.
 
@@ -211,11 +205,11 @@ At this point we could be done. But this is a technique that could greatly help 
 - Special thanks to **Divyanshu Raj**, **Dave Pagurek** and **Matt DesLauriers** for their continued support and invaluable feedback and help!
 - And massive props to the Processing Foundation for making this possible and accessible to everyone.
 
-<br>
-
 ### and, last but not least... thank YOU!
 
-<br>
-<br>
+Find me at:
 
-### Any questions?
+- Webpage: [jesirgb.com](https://jesirgb.com)
+- Twitter: [@jesi_rgb](https://twitter.com/jesi_rgb)
+- Github: [jesi-rgb](https://github.com/jesi-rgb)
+- Mastodon: [@jesi_rgb](https://mastodon.social/@jesi_rgb)
